@@ -1,18 +1,30 @@
 # vue-nvd3-charts
 
-> A Vue.js project
+> NVD3 wrapper for Vue.js
 
 ## Build Setup
 
 ``` bash
-# install dependencies
-npm install
+# Installing with npm
+npm install vue-nvd3-charts
+```
+Fully import
+``` javascript
+import Vue from 'vue'
+import VueNvd3 from 'vue-nvd3-charts'
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
+Vue.use(VueNvd3)
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+On demand
+``` javascript
+import { BarChart, LineChart, PieChart } from 'vue-nvd3-charts'
+...
+new Vue({
+  components: {
+    BarChart,
+    LineChart,
+    PieChart
+  }
+})
+```
