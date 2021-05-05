@@ -52,7 +52,7 @@ export default {
         },
         leftMargin: {
             type: Number,
-            default: 20
+            default: 300
         }
     },
     mounted() {
