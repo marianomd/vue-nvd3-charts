@@ -42,10 +42,6 @@ export default {
         y: {
             type: Function
         },
-        tooltips: {
-            type: Boolean,
-            default: true
-        },
         showLegend: {
             type: Boolean,
             default: true
@@ -58,7 +54,6 @@ export default {
             chart.showValues(this.showValues)
                  .showLegend(this.showLegend)
                  .duration(this.duration)
-                 .tooltips(this.tooltips)
                  .margin({top: 30, right: 20, bottom: 50, left: 175})
 
             if (!this.x) {
