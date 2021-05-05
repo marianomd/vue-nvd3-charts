@@ -45,6 +45,14 @@ export default {
         showLegend: {
             type: Boolean,
             default: true
+        },
+        showControls: {
+            type: Boolean,
+            default: true
+        },
+        leftMargin: {
+            type: Number,
+            default: 20
         }
     },
     mounted() {
@@ -54,7 +62,7 @@ export default {
             chart.showValues(this.showValues)
                  .showLegend(this.showLegend)
                  .duration(this.duration)
-                 .margin({top: 30, right: 20, bottom: 50, left: 175})
+                 .margin({top: 30, right: 20, bottom: 50, left: this.leftMargin})
 
             if (!this.x) {
                 chart.x(function(d) { return d.label })
