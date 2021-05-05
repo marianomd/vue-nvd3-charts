@@ -56,22 +56,28 @@ export default {
         }
     },
     mounted() {
+        console.log('leftMargin: ' + this.leftMargin);
         nv.addGraph(() => {
             let model = nv.models.multiBarHorizontalChart
             let chart = model()
             chart.showValues(this.showValues)
-                 .showLegend(this.showLegend)
-                 .duration(this.duration)
-                 .margin({top: 30, right: 20, bottom: 50, left: this.leftMargin})
+                .showLegend(this.showLegend)
+                .duration(this.duration)
+                .showControls(this.showControls)
+                .margin({top: 30, right: 20, bottom: 50, left: this.leftMargin})
 
             if (!this.x) {
-                chart.x(function(d) { return d.label })
+                chart.x(function(d) {
+                    return d.label
+                })
             } else {
                 chart.x(this.x)
             }
 
             if (!this.y) {
-                chart.y(function(d) { return d.value })
+                chart.y(function(d) {
+                    return d.value
+                })
             } else {
                 chart.y(this.y)
             }
